@@ -18,35 +18,59 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 $( document ).ready(function() {
     
-	// Rocket Animation
-$(function() {
-	var rocket = $('#overlay-launch'),
-			rocketPlatform = $('#rocket_platform'),
-			wheel = $('#rocket_leftWheel_left, #rocket_leftWheel_right, #rocket_rightWheel_left, #rocket_rightWheel_right'),
-			rocketShip = $('#rocket_ship'),
-			flames = $('#flames'),
-			glass = $('#glass'),
-			masterTimeline = new TimelineMax();
+	var iLetter1 = $('#I__letter--1'),
+		iLetter2 = $('#I__letter--2'),
+		iLetter3 = $('#I__letter--3'),
+		oLetter1 = $('#o__letter--1'),
+		oLetter2 = $('#o__letter--2'),
+		oLetter3 = $('#o__letter--3'),
+		slLetter1 = $('#Sl__letter--1'),
+		slLetter2 = $('#Sl__letter--2'),
+		slLetter3 = $('#Sl__letter--3'),
+		ndigLetter1 = $('#ndig__letter--1'),
+		ndigLetter2 = $('#ndig__letter--2'),
+		ndigLetter3 = $('#ndig__letter--3');
+		dotLetter1 = $('#dot__letter--1'),
+		dotLetter2 = $('#dot__letter--2'),
+		dotLetter3 = $('#dot__letter--3');
+		ateLetter1 = $('#ate__letter--1'),
+		ateLetter2 = $('#ate__letter--2'),
+		ateLetter3 = $('#ate__letter--3');
 
+	var tl1 = new TimelineMax();
 
-	var enterRocket = new TimelineMax();		
-	enterRocket.set(rocket, {x: -1000, opacity: 0}).set(flames, {scale: 0.25, transformOrigin: '50% 0%', opacity: 0})
+	tl1.set([iLetter1, iLetter2, iLetter3, ndigLetter1, ndigLetter2, ndigLetter3, oLetter1, oLetter2, oLetter3, slLetter1, slLetter2, slLetter3, ateLetter1, ateLetter2, ateLetter3, dotLetter1, dotLetter2, dotLetter3], {
+		drawSVG: '0% 0%', alpha: 0
+	})
 
-	enterRocket.to(rocket, 1, {opacity: 1, ease: Power4.easeIn})
-	.to(rocket, 3.5, {x: 0, ease: Power4.easeOut}, '-=1')
-	.fromTo(wheel, 3.5, {rotation:-360}, {rotation:0, ease: Power4.easeOut, transformOrigin: '50% 50%'}, '-=3.5')
-	.fromTo(rocketPlatform, 0.75, {y: 0}, {y: -1, repeat: 3, ease: Power4.easeOut}, '-=3.5');
+	// I 
+	.to(iLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(iLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(iLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
 
-	// .to(glass, 5, {x: 0, ease: Power4.easeOut});
+	// ndig 
+	.to(ndigLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(ndigLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(ndigLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
 
-	$('.body').on('click', function(){
-		var launchTime = new TimelineMax({delay: 0.12});
-		launchTime.staggerFromTo(rocketShip, 0.12, {x:-1}, {x:1, repeat:4}, '-=0.6')
-		.to(flames, 2, {opacity: 1, scale:1}, 3)
-		.to(rocketShip, 10, {y: -1000, ease: Power4.easeIn}, '-=6.25')
-	});
-});
+	// o 
+	.to(oLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(oLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(oLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
 
+	// sl
+	.to(slLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(slLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(slLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
 
+	// ate
+	.to(ateLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(ateLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(ateLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+
+	// dot
+	.to(dotLetter3, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(dotLetter2, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
+	.to(dotLetter1, 0.3, { drawSVG: '0% 100%', ease: Power1.easeInOut, alpha:1},'-=0.2')
 
 });
